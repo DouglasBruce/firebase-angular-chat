@@ -1,0 +1,59 @@
+<div *ngIf="success && success != null" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success!</strong> A reset email has been sent.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeAlert(1)">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div *ngIf="!hasForgotPassword" class="container">
+  <form #loginForm="ngForm">
+    <h2 class="login-title">Sign in</h2>
+    <div class="group">      
+      <input class="input" type="text" #emailControl="ngModel" [(ngModel)]="email" name="email" autocomplete="off" email required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Email</label>
+    </div>
+    <div class="group">
+      <div class="left">
+        <input #passwordInput class="input" type="password" #passwordControl="ngModel" [(ngModel)]="password" name="password" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Password</label>
+      </div>
+      <div class="right">
+        <a class="glyphicon" (click)="showPassword()"><i *ngIf="!passwordVisibility" class="fa fa-eye-slash faIcon" aria-hidden="true"></i><i *ngIf="passwordVisibility" class="fa fa-eye faIcon" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="pull-left">
+      <div class="dropdown show">
+        <a class="dropdown-toggle link moreOptions centerPText" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          More options
+        </a>
+        
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" (click)="forgotPassword()">Forgot password?</a>
+          <a class="dropdown-item" (click)="signUp()">Create account</a>
+        </div>
+      </div>
+    </div>
+    <div class="pull-right">
+      <button [disabled]="!loginForm.form.valid" type="submit" class="btn btn-signin" (click)="signIn()"><span class="buttonText">SIGN IN</span></button>
+    </div>
+    <p *ngIf="errorMsg" class="text-danger">{{ errorMsg }}</p>
+  </form>
+</div>
+<div *ngIf="hasForgotPassword" class="container">
+  <form #resetForm="ngForm">
+    <h2 class="login-title">Forgot password</h2>
+    <div class="group">      
+      <input class="input" type="text" #resetEmailControl="ngModel" [(ngModel)]="resetEmail" name="resetEmail" autocomplete="off" email required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Email</label>
+    </div>
+    <div class="pull-right">
+      <button [disabled]="!resetForm.form.valid" type="submit" class="btn btn-signin" (click)="reset()"><span class="buttonText">RESET</span></button>
+    </div>
+    <p *ngIf="errorMsg" class="text-danger">{{ errorMsg }}</p>
+  </form>
+</div>

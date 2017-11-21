@@ -1,0 +1,10 @@
+.messages {
+    padding-left: 0;
+    list-style: none;
+    word-wrap: break-word;
+}
+
+.message {
+	overflow: overlay;
+	margin-bottom: 5px;
+}

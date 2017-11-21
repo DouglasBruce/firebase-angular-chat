@@ -1,0 +1,379 @@
+.editUserContainer {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media (min-width:576px) {
+    .editUserContainer{
+        max-width: 540px;
+    }
+}
+
+@media (min-width:768px) {
+    .editUserContainer{
+        max-width: 720px;
+    }
+}
+
+@media (min-width:992px) {
+    .editUserContainer{
+        max-width: 960px;
+    }
+}
+
+@media (min-width:1200px) {
+    .editUserContainer{
+        max-width: 1140px;
+    }
+}
+
+@media screen and (min-width:737px) {
+    .editUserContainer{
+        font-family: 'Roboto', sans-serif;
+        display: block;
+        color: #111;
+        background-color: #fff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        width: 50%;
+        border-radius: 1px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-width:736px) {
+    .editUserContainer{
+        font-family: 'Roboto', sans-serif;
+        display: block;
+        color: #111;
+        background-color: #fff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        width: 100%;
+        margin-bottom: 100px;
+        padding: 0 15px; 
+    }
+}
+
+@media screen and (min-width:737px) {
+    .container{
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    padding: 15px;
+    color: #111;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 50%;
+    border-radius: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-width:736px) {
+    .container{
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 50px;
+    color: #111;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    margin-bottom: 100px;
+    }
+}
+
+.blueContainer {
+    width: 100%;
+    color: #fff;
+    background-color: #4D90FE;
+    margin-bottom: 10px;
+}
+.whiteContainer {
+    padding: 15px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.profilePic {
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.centerIcon {
+    color: #4D90FE;
+    font-size: 54px;
+	height: 140px;
+	line-height: 140px;
+	text-align: center;
+	width: 140px;
+}
+
+.centerText {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.addProfilePic {
+    font-size: 1.1rem;
+}
+
+.centerPText {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.link {
+    cursor: pointer;
+    pointer-events: all;
+    color: #4D90FE !important;
+}
+
+.img-circle {
+    border-radius: 50%;
+    color: #4D90FE;
+    background-color: #fff;
+    width: 140px;
+    height: 140px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.btn-signup {
+    color:#fff;
+    background-color: #4D90FE;
+    height: 36px;
+    width: auto;
+    box-shadow: 0px 2px 5px #888888;
+    float: right;
+    cursor: pointer;
+    pointer-events: all;
+    margin-left: 15px;
+}
+
+.btn-signup:hover {
+    background-color: #357AE8;
+}
+
+.btn:disabled {
+  cursor: not-allowed !important;
+}
+
+.buttonText {
+    margin: 8px 16px;
+}
+
+h2.auth-title{
+	font-family: 'Roboto', sans-serif;
+	font-size: 32px;
+	color: #111;
+	text-align: left;
+	margin-bottom: 25px;
+}
+
+* { box-sizing: border-box; }
+
+.group { 
+    position: relative; 
+    margin-bottom: 30px; 
+}
+
+.addPadding {
+    padding-top: 30px;
+}
+
+.input {
+    font-size:18px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    width: 100%;
+    border:none;
+    border-bottom:1px solid #f1f1f1;
+}
+
+.input:focus { outline:none; }
+
+label {
+    color: #757575; 
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all; 
+    -moz-transition: 0.2s ease all; 
+    -webkit-transition: 0.2s ease all;
+}
+
+.input.ng-valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #42A948;
+}
+
+.input.ng-valid:not(:focus) {
+    border-bottom: 1px solid #42A948;
+}
+
+.input.ng-touched.ng-invalid:not(:focus) ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #a94442; 
+}
+
+.input.ng-touched.ng-invalid:not(:focus) {
+    border-bottom: 1px solid #a94442;
+}
+
+.input:focus ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #4D90FE;
+}
+
+.bar { 
+    position: relative; 
+    display: block; 
+    width: 100%; 
+}
+
+.bar:before, .bar:after {
+    content:'';
+    height:2px; 
+    width:0;
+    bottom:1px; 
+    position:absolute;
+    background:#4D90FE ; 
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+}
+.bar:before {
+    left: 50%;
+}
+.bar:after {
+    right: 50%; 
+}
+
+.input:focus ~ .bar:before, .input:focus ~ .bar:after {
+    width: 50%;
+}
+
+.highlight {
+    position: absolute;
+    height: 60%; 
+    width: 100px; 
+    top: 25%; 
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.glyphicon {
+    cursor: pointer;
+    pointer-events: all;
+}  
+
+.left {
+    float: left;
+    min-width: 100%;
+}
+
+.right {
+    margin-left: 100%;
+    vertical-align: middle;
+}
+
+.faIcon {
+    position: relative;
+    top: 15px;
+    right: 20px;
+}
+
+.loader {
+  position: relative;
+  margin: 0 auto;
+}
+
+.loader:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+
+.circular {
+  animation: rotate 2s linear infinite;
+  height: 100%;
+  transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+@keyframes color {
+  100%,
+  0% {
+    stroke: #d62d20;
+  }
+  40% {
+    stroke: #0057e7;
+  }
+  66% {
+    stroke: #008744;
+  }
+  80%,
+  90% {
+    stroke: #ffa700;
+  }
+}
+
+.moreOptions::after {
+    display:none
+}

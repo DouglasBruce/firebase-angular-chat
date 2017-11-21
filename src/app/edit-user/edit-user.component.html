@@ -1,0 +1,133 @@
+<div *ngIf="success && success != null" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success!</strong> A reset email has been sent.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeAlert(1)">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="editUserContainer">
+  <div *ngIf="!reauthenticated && !hasForgotPassword" class="row">
+    <div class="whiteContainer">
+      <form #reauthForm="ngForm">
+        <h2 class="auth-title">Authentication required</h2>
+        <div class="group">      
+          <input class="input" type="text" #reauthEmailControl="ngModel" [(ngModel)]="reauthEmail" name="reauthEmail" autocomplete="off" email required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Email</label>
+        </div>
+        <div class="group">
+          <div class="left">
+            <input #reauthPasswordInput class="input" type="password" #reauthPasswordControl="ngModel" [(ngModel)]="reauthPassword" name="reauthPassword" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Password</label>
+          </div>
+          <div class="right">
+            <a class="glyphicon" (click)="showReauthPassword()"><i *ngIf="!reauthPasswordVisibility" class="fa fa-eye-slash faIcon" aria-hidden="true"></i><i *ngIf="reauthPasswordVisibility" class="fa fa-eye faIcon" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="pull-left">
+          <a class="centerPText link" (click)="forgotPassword()">Forgot password?</a>
+        </div>
+        <div class="pull-right">
+          <button type="button" class="btn btn-signup" (click)="back()"><span class="buttonText">BACK</span></button>
+          <button [disabled]="!reauthForm.form.valid" type="submit" class="btn btn-signup" (click)="reauth()"><span class="buttonText">SIGN IN</span></button>
+        </div>
+        <p *ngIf="errorMsg" class="text-danger">{{ errorMsg }}</p>
+      </form>
+    </div>
+  </div>
+  <div *ngIf="reauthenticated  && !hasForgotPassword" class="row">
+    <div class="blueContainer">
+        <div class="row centerText">
+          <h3>Edit your profile</h3>
+        </div>
+        <div class="row centerText">
+          <div #imgDiv class="img-circle profilePic" (click)="editProfilePic()">
+            <a class="profilePic">
+              <div *ngIf="showSpinner" class="loader">
+                <svg class="circular" viewBox="25 25 50 50">
+                  <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="row centerText">
+          <p class="addProfilePic"><a class="profilePic" (click)="editProfilePic()"><i class="fa fa-camera fa-lg" aria-hidden="true"></i> Change profile picture</a></p>
+        </div>
+      </div>
+    <div class="whiteContainer">
+      <form #editForm="ngForm">
+        <div class="group">      
+          <input class="input" type="text" #displayNameControl="ngModel" [(ngModel)]="displayName" name="displayName" maxlength="12" autocomplete="off" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Display Name</label>
+        </div>
+        <div class="group">      
+          <input class="input" type="text" #emailControl="ngModel" [(ngModel)]="email" name="email" autocomplete="off" email required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Email</label>
+        </div>
+        <div class="group">
+          <div class="left">
+            <input #passwordInput class="input" type="password" #passwordControl="ngModel" [(ngModel)]="password" name="password" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>New Password</label>
+          </div>
+          <div class="right">
+            <a class="glyphicon" (click)="showPassword()"><i *ngIf="!passwordVisibility" class="fa fa-eye-slash faIcon" aria-hidden="true"></i><i *ngIf="passwordVisibility" class="fa fa-eye faIcon" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="group">
+          <div class="left addPadding">
+            <input #confirmPasswordInput class="input" type="password" #confirmPasswordControl="ngModel" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label class="addPadding">Confirm Password</label>
+          </div>
+          <div class="right addPadding">
+            <a class="glyphicon" (click)="showPassword()"><i *ngIf="!passwordVisibility" class="fa fa-eye-slash faIcon" aria-hidden="true"></i><i *ngIf="passwordVisibility" class="fa fa-eye faIcon" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="pull-left">
+          <div class="dropdown show">
+            <a class="dropdown-toggle link moreOptions centerPText" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Delete account?
+            </a>
+            
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" (click)="yes()">Yes</a>
+              <a class="dropdown-item">No</a>
+            </div>
+          </div>
+        </div>
+        <div class="pull-right">
+          <button type="button" class="btn btn-signup" (click)="back()"><span class="buttonText">BACK</span></button>
+          <button type="submit" class="btn btn-signup" (click)="save()"><span class="buttonText">SAVE</span></button>
+        </div>
+        <p *ngIf="errorMsg" class="text-danger">{{ errorMsg }}</p>
+      </form>
+    </div>
+  </div>
+</div>
+<div *ngIf="hasForgotPassword  && !reauthenticated" class="container">
+  <form #resetForm="ngForm">
+    <h2 class="auth-title">Forgot password</h2>
+    <div class="group">      
+      <input class="input" type="text" #resetEmailControl="ngModel" [(ngModel)]="resetEmail" name="resetEmail" autocomplete="off" email required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Email</label>
+    </div>
+    <div class="pull-right">
+      <button [disabled]="!resetForm.form.valid" type="submit" class="btn btn-signup" (click)="reset()"><span class="buttonText">RESET</span></button>
+    </div>
+    <p *ngIf="errorMsg" class="text-danger">{{ errorMsg }}</p>
+  </form>
+</div>
+<input #fileInput accept="image/*" name="profilePic" type="file" id="profilePic" name="profilePic" 
+(change)="detectFiles($event)" style="visibility: hidden; width: 1px; height: 1px" />

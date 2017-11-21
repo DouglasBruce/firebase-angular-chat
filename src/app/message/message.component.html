@@ -1,0 +1,16 @@
+<div class="cont">
+  <div class="image" [ngClass]="{'hide': isOwnMessage}">
+    <div class="cont">
+      <div #messageIconDiv class="messagePicture">
+      </div>
+      <span class="sender">
+          {{ displayName }}
+      </span>
+    </div>
+  </div>
+  <div class="cont">
+    <div [ngClass]="{'me': isOwnMessage, 'you': !isOwnMessage}">
+      <span>{{ messageContent }}</span>
+    </div>
+  </div>
+</div>

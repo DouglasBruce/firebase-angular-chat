@@ -1,0 +1,73 @@
+<div class="signupContainer">
+	<div *ngIf="accountCreated" class="row">
+		<div class="blueContainer">
+			<div class="row centerText">
+				<h3>Add profile picture</h3>
+			</div>
+			<div class="row centerText">
+				<div #imgDiv class="img-circle" (click)="selectProfilePic()">
+					<a class="profilePic">
+						<i *ngIf="!selectedProfilePic" class="fa fa-camera fa-4x centerIcon" aria-hidden="true"></i>
+						<div *ngIf="showSpinner" class="loader">
+							<svg class="circular" viewBox="25 25 50 50">
+								<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+							</svg>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="row centerText">
+				<p class="addProfilePic"><a class="profilePic" (click)="selectProfilePic()"><i class="fa fa-camera fa-lg" aria-hidden="true"></i> Add a profile picture</a></p>
+			</div>
+		</div>
+		<div class="whiteContainer">
+			<div class="pull-left">
+				<p class="centerPText">You can always select one later</p>
+			</div>
+			<div class="pull-right">
+				<button type="button" class="btn btn-signup" (click)="skip()"><span class="buttonText">SKIP</span></button>
+				<button [disabled]="!profileLoaded" type="button" class="btn btn-signup" (click)="continue()"><span class="buttonText">CONTINUE</span></button>
+			</div>
+			<p *ngIf="errorMsg" class="text-danger">{{ errorMsg }}</p>
+		</div>
+	</div>
+	<div *ngIf="!accountCreated" class="row">
+		<div class="whiteContainer">
+			<form #signupForm="ngForm">
+				<h2 class="signup-title">Sign up</h2>
+				<div class="group">      
+					<input class="input" type="text" #displayNameControl="ngModel" [(ngModel)]="displayName" name="displayName" maxlength="12" autocomplete="off" required>
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label>Display Name</label>
+				</div>
+				<div class="group">      
+					<input class="input" type="text" #emailControl="ngModel" [(ngModel)]="email" name="email" autocomplete="off" email required>
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label>Email</label>
+				</div>
+				<div class="group">
+					<div class="left">
+						<input #passwordInput class="input" type="password" #passwordControl="ngModel" [(ngModel)]="password" name="password" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Password</label>
+					</div>
+					<div class="right">
+						<a class="glyphicon" (click)="showPassword()"><i *ngIf="!passwordVisibility" class="fa fa-eye-slash faIcon" aria-hidden="true"></i><i *ngIf="passwordVisibility" class="fa fa-eye faIcon" aria-hidden="true"></i></a>
+					</div>
+				</div>
+				<div class="pull-left">
+					<a class="centerPText link" (click)="login()">Login</a>
+				</div>
+				<div class="pull-right">
+					<button [disabled]="!signupForm.form.valid" type="submit" class="btn btn-signup" (click)="signUp()"><span class="buttonText">SIGN UP</span></button>
+				</div>
+				<p *ngIf="errorMsg" class="text-danger">{{ errorMsg }}</p>
+			</form>
+		</div>
+	</div>
+</div>
+<input #fileInput accept="image/*" name="profilePic" type="file" id="profilePic" name="profilePic" 
+(change)="detectFiles($event)" style="visibility: hidden; width: 1px; height: 1px" />

@@ -1,0 +1,195 @@
+@media screen and (min-width:737px) {
+    .container{
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    padding: 15px;
+    color: #111;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 50%;
+    border-radius: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-width:736px) {
+    .container{
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 50px;
+    color: #111;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    margin-bottom: 100px;
+    }
+}
+
+.centerPText {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.link {
+    cursor: pointer;
+    pointer-events: all;
+    color: #4D90FE !important;
+}
+
+.btn-signin {
+    color:#fff;
+    background-color: #4D90FE;
+    height: 36px;
+    width: auto;
+    box-shadow: 0px 2px 5px #888888;
+    float: right;
+    margin-left: 15px;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.btn-signin:hover {
+    background-color: #357AE8;
+}
+
+.btn-signin:disabled {
+    cursor: not-allowed;
+}
+
+.buttonText {
+    margin: 8px 16px;
+}
+
+h2.login-title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    color: #111;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+* { box-sizing: border-box; }
+
+.group { 
+    position: relative; 
+    margin-bottom: 30px; 
+}
+
+.input {
+    font-size:18px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    width: 100%;
+    border:none;
+    border-bottom:1px solid #f1f1f1;
+}
+
+.input:focus { outline:none; }
+
+label {
+    color: #757575; 
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all; 
+    -moz-transition: 0.2s ease all; 
+    -webkit-transition: 0.2s ease all;
+}
+
+.input.ng-valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #42A948;
+}
+
+.input.ng-valid:not(:focus) {
+    border-bottom: 1px solid #42A948;
+}
+
+.input.ng-touched.ng-invalid:not(:focus) ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #a94442; 
+}
+
+.input.ng-touched.ng-invalid:not(:focus) {
+    border-bottom: 1px solid #a94442;
+}
+
+.input:focus ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #4D90FE;
+}
+
+.bar { 
+    position: relative; 
+    display: block; 
+    width: 100%; 
+}
+
+.bar:before, .bar:after {
+    content:'';
+    height:2px; 
+    width:0;
+    bottom:1px; 
+    position:absolute;
+    background:#4D90FE; 
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+}
+.bar:before {
+    left: 50%;
+}
+.bar:after {
+    right: 50%; 
+}
+
+.input:focus ~ .bar:before, .input:focus ~ .bar:after {
+    width: 50%;
+}
+  
+.highlight {
+    position: absolute;
+    height: 60%; 
+    width: 100px; 
+    top: 25%; 
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.glyphicon {
+    cursor: pointer;
+    pointer-events: all;
+}  
+
+.left {
+    float: left;
+    min-width: 100%;
+}
+
+.right {
+    margin-left: 100%;
+    vertical-align: middle;
+}
+
+.faIcon {
+    position: relative;
+    top: 15px;
+    right: 20px;
+}
+
+.moreOptions::after {
+    display:none
+}

@@ -1,0 +1,73 @@
+.me {
+    background-color: #00b7b7;
+    border-radius: 30px;
+    clear: both;
+    color: #fff;
+    float: right;
+    line-height: 1.4;
+    max-width: 510px;
+    padding: 10px 15px;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.you {
+    background-color: #732C7B;
+    border-radius: 30px;
+    clear: both;
+    color: #fff;
+    float: left;
+    line-height: 1.4;
+    margin-left: 5px;
+    max-width: 510px;
+    padding: 10px 15px;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.cont {
+    overflow: overlay;
+}
+
+.image {
+    clear: both;
+    float: left;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.sender {
+    font-size: 0.75rem;
+}
+
+.hide {
+    display: none;
+}
+
+.timestamp {
+    color: #555;
+    font-style: italic;
+    font-size: 0.7rem;
+    clear: both;
+}
+
+.right {
+    float: right;
+    margin-right: 15px;
+}
+
+.left {
+    float: left;
+}
+
+.messagePicture {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center center;
+}

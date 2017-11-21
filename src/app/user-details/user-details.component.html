@@ -1,0 +1,53 @@
+<div class="userDetailsContainer">
+  <div #avatarDiv class="profilePicture">
+  </div>
+  <div class="row">
+    <div style="margin: 0 auto;">
+      <span class="detailsDisplayName">{{displayName}}</span>
+      <span>&nbsp;</span>
+      <span style="margin-top: 6px; float: right; margin-left: 0;" class="statusBox" [ngClass]=(status)>
+        {{status}}
+      </span>
+    </div>
+  </div>
+  <div class="buttons">
+    <button class="btn btn-danger" href="#" (click)=logout()><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+    <button style="color: #fff;" class="btn btn-warning" href="#" (click)=edit()><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Status
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" (click)="setStatus('busy')">Busy</a>
+        <a class="dropdown-item" (click)="setStatus('online')">Online</a>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col">
+      <div>
+        <span class="box yellow">{{busyUsers}}</span>
+      </div>
+      <div>
+        <span>Busy</span>
+      </div>
+    </div>
+    <div class="col">
+      <div> 
+        <span class="box green">{{onlineUsers}}</span>
+      </div>
+      <div>
+        <span>Online</span>
+      </div>
+    </div>
+    <div class="col">
+      <div>
+        <span class="box red">{{offlineUsers}}</span>
+      </div>
+      <div>
+        <span>Offline</span>
+      </div>
+    </div>
+  </div>
+</div>

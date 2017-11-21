@@ -1,0 +1,18 @@
+<div class="userItem">
+  <div class="row">
+    <div class="col">
+      <div #avatarSmallDiv class="proPicture">
+      </div>
+    </div>
+    <div class="col">
+      <span class="displayName centerUserText">
+        {{user.displayName}}
+      </span>
+    </div>
+    <div class="col">
+      <span class="statusBox centerUserText" [ngClass]=(user.status)>
+        {{user.status}}
+      </span>
+    </div>
+  </div>
+</div>

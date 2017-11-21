@@ -1,0 +1,72 @@
+.offline {
+    background-color: #DC3545;
+    border-color: #DC3545;
+}
+
+.online {
+    background-color: #28A745;
+    border-color: #28A745;
+}
+
+.busy {
+    background-color: #FFC107;
+    border-color: #FFC107;
+}
+
+.statusBox {
+    float: right;
+    color: #fff;
+    display: block;
+    font-weight: 100;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .25rem .5rem;
+    font-size: 0.8rem;
+    line-height: 0.75;
+    border-radius: .25rem;
+}
+
+.displayName {
+    float: left;
+}
+
+@media (max-width:768px){
+    .statusBox {
+        float: left;
+        margin-left: 15px;
+    }
+}
+
+.col {
+    padding: 5px;
+}
+
+.userItem {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    vertical-align: middle;
+    padding: .5rem .75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+.proPicture {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center center;
+}
+
+.centerUserText {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}

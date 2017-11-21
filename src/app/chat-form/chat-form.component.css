@@ -1,0 +1,17 @@
+textarea.messages {
+    border-radius: 30px;
+    color: #732C7B !important;
+    height: 34px;
+    overflow: hidden;
+    padding-left: 15px;
+    resize: none;
+    text-shadow: 0 0 0 #000;
+    word-wrap: break-word;
+    -webkit-text-fill-color: transparent;
+}
+
+textarea.messages::-webkit-input-placeholder {
+    color: #999999;
+    text-shadow: none;
+    -webkit-text-fill-color: initial;
+}
